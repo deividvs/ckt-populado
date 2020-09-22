@@ -1,0 +1,12 @@
+<script>
+// Isso garante que o formulario é recebido pelo servidor
+$(document).ajaxStop(function() {
+
+  // Pegue todos os valores do form
+  var string = '&' + $('form').find('input').map(function() { 
+  	var key = encodeURIComponent((this.name || this.id).trim());
+  	return key ? key + '=' + encodeURIComponent($(this).val()) : null; }).get().join('&');
+
+  // Redirect URL
+  location.href = 'ADICIONE AQUI A URL DA HOTMART' + string; });
+</script>  
